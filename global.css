@@ -1,0 +1,43 @@
+h1 {
+    color: darkblue;
+    text-align: center;
+    font: 50px "Comic Sans MS";
+}
+
+
+h2 {
+    color: darkblue;
+    font: 30px "Comic Sans MS";
+}
+
+h3 {
+    color: darkblue;
+    text-align: center;
+    font: 20px "Comic Sans MS";
+    
+}
+
+p {
+    font-family: chewy, cursive;
+}
+
+ul {
+    border: 3px solid darkblue; 
+    width: 200px;
+    text-align: center;
+    background-color: #c7f5f5;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+li {
+    list-style-type: circle;
+    padding: 10px;
+    border-bottom: 1px solid darkblue;
+}
+
+section {
+    margin: 10px;
+    text-align: center;
+}

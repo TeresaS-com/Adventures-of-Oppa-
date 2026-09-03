@@ -116,6 +116,6 @@ nav {
 }
 
 #vs-image {
-    max-height: 8dvh
+    max-height: 8dvh;
     overflow: hidden;
 }

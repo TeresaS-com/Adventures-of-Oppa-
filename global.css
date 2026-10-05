@@ -1,3 +1,24 @@
+:root {
+  --primary-color: #AEE7E0;
+  --secondary-color: #AED2E7;
+  --contrast-color: #E7EDAE;
+  --triadic-color: #E7AED2;
+  --extra-color: #00008B;
+}
+
+.aside-right {
+    grid-area: aside-right;
+    padding: 1rem;
+    width: 300px;
+}
+
+.page {
+    display: flex;
+    gap: 20px;
+}
+
+
+
 h1 {
     color: darkblue;
     text-align: center;
@@ -15,10 +36,6 @@ h3 {
     text-align: center;
     font: 20px "Comic Sans MS";
     
-}
-
-body {
-    background-color: #aee7e0;
 }
 
 body {
@@ -113,9 +130,25 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
+    background-color: #a7d7eb;
 }
 
-#vs-image {
-    max-height: 8dvh;
-    overflow: hidden;
+.nav-link {
+    color: darkblue;
+    text-decoration: none;
+    font-family: chewy, cursive;
+    font-size: 20px;
 }
+
+@media (min-width: 600px) {
+    .page {
+        grid-template-rows: 2fr 2fr;
+        grid-template-areas: "nav nav nav" "header header header" "main aside-right" ;
+    }
+}
+
+
+
+
+

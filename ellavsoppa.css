@@ -1,0 +1,62 @@
+:root {
+  --primary-color: #FBC6E7;
+  --secondary-color: #ACDFA5;
+  --contrast-color: #A5DFD8;
+  --triadic-color: #BBA5DF;
+  --extra-color: #DFBBA5;
+}
+
+#vs-photo {
+    min-height: 80dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 6%;
+
+    background-image: url("./images/VS.JPEG");
+    border: 10px solid #E2A6CB;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-color: rgb(251, 198, 231);
+}
+
+img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 7px solid rgb(226, 166, 203);
+}
+
+nav {
+    min-height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color:rgb(226, 166, 203);
+}
+
+.nav-links {
+    color: rgba(255, 254, 255, 0.733);
+    text-decoration: none;
+    font-family: chewy, cursive;
+    font-size: 20px;
+}
+
+.box-idea {
+    border: 8px solid blanchedalmond;
+}
+
+
+
+
+

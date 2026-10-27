@@ -1,13 +1,42 @@
+
 :root {
-  --primary-color: #FBC6E7;
-  --secondary-color: #ACDFA5;
-  --contrast-color: #A5DFD8;
-  --triadic-color: #BBA5DF;
-  --extra-color: #DFBBA5;
+    --primary-color: #FBC6E7;
+    --secondary-color: #ACDFA5;
+    --contrast-color: #A5DFD8;
+    --triadic-color: #BBA5DF;
+    --extra-color: #DFBBA5;
+
+    --ella-border: #E2A6CB;
+    --ella-text: #663653;
 }
 
+/* Page background */
+body {
+    background-color: var(--primary-color);
+}
+
+/* Navigation */
+body nav {
+    min-height: 60px;
+    background-color: var(--ella-border);
+}
+
+body nav a.nav-links {
+    color: var(--ella-text);
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* Hover and keyboard focus */
+body nav a.nav-links:hover,
+body nav a.nav-links:focus-visible {
+    background-color: var(--contrast-color);
+}
+  
+/* VS banner */
 #vs-photo {
-    min-height: 80dvh;
+    min-height: 80vh;
 
     display: flex;
     align-items: center;
@@ -15,48 +44,128 @@
 
     padding: 6%;
 
-    background-image: url("./images/VS.JPEG");
-    border: 10px solid #E2A6CB;
+    background-image: url("../images/VS.JPEG");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+
+    border: 8px solid #E2A6CB;
 }
 
-body {
-    background-color: rgb(251, 198, 231);
+/* Banner title */
+#vs-photo p {
+    padding: 15px 24px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--ella-text);
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: bold;
 }
 
-img {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    border: 7px solid rgb(226, 166, 203);
-}
+/* Ella introduction card and oppas reason */
 
-nav {
-    min-height: 50px;
-
+#ellavsoppa-intro {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    background-color:rgb(226, 166, 203);
-}
-
-.nav-links {
-    color: rgba(255, 254, 255, 0.733);
-    text-decoration: none;
-    font-family: chewy, cursive;
-    font-size: 20px;
+    padding: 24px;
+    background-color: var(--primary-color);
 }
 
 .box-idea {
-    border: 8px solid blanchedalmond;
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 24px;
+
+    border: 5px solid blanchedalmond;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 4px 12px rgba(102, 54, 83, 0.15);
+    display: grid;
 }
 
+/* Ella's picture and oppa's picture */
+.box-idea img {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
 
+    border: 6px solid var(--ella-border);
+    border-radius: 12px;
+}
 
+/* Card text */
+.box-idea p {
+    color: var(--ella-text);
+    line-height: 1.7;
+}
 
+/*Cats Fighting Banner*/
 
+.explosion-sprite.play {
+    opacity: 1;
+    animation: explode 0.8s steps(8) forwards;
+}
+
+@keyframes explode {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -800% 0;
+    }
+}
+
+.page {
+    position: relative;
+    display: inline-block;
+}
+
+.explosion-cat {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.explosion-sprite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/explosionsheet.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Show the explosion when hovering over the cat */
+
+.page:hover .explosion-sprite {
+    opacity: 1;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    #vs-photo {
+        min-height: 45vh;
+        padding: 16px;
+        background-position: center;
+    }
+
+    #vs-photo p {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .box-idea {
+        margin: 16px 12px;
+        padding: 16px;
+    }
+}

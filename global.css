@@ -1,152 +1,274 @@
+
 :root {
-  --primary-color: #AEE7E0;
-  --secondary-color: #AED2E7;
-  --contrast-color: #E7EDAE;
-  --triadic-color: #E7AED2;
-  --extra-color: #00008B;
+    --primary-color: #AEE7E0;
+    --secondary-color: #AED27E7;
+    --contrast-color: #E7EDAE;
+    --triadic-color: #E7AED2;
+    --extra-color: #00008B;
+
+    --text-color: darkblue;
+    --border-color: rgb(95, 142, 180);
+    --font-family: "Comic Sans MS", cursive;
 }
 
-.aside-right {
-    grid-area: aside-right;
-    padding: 1rem;
-    width: 300px;
-}
-
-.page {
-    display: flex;
-    gap: 20px;
-}
-
-
-
-h1 {
-    color: darkblue;
-    text-align: center;
-    font: 50px "Comic Sans MS";
-}
-
-
-h2 {
-    color: darkblue;
-    font: 30px "Comic Sans MS";
-}
-
-h3 {
-    color: darkblue;
-    text-align: center;
-    font: 20px "Comic Sans MS";
-    
+/* General page styles */
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #aee7e0;
+    margin: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
 }
 
 p {
-    font-family: chewy, cursive;
+    text-align: center;
+    line-height: 1.6;
 }
 
-th {
-    font-family: chewy, cursive;
-    font-size: 20px;
-    border: 3px solid rgb(95, 142, 180);
-    background-color: rgba(0, 0, 139, 0.595);
+/* Navigation */
+nav {
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background-color: var(--secondary-color);
 }
 
-tr {
-    font-family: chewy, cursive;
-    font-size: 20px;
-    border: 3px solid rgb(95, 142, 180);
+nav a {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background-color: azure;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: var(--contrast-color);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    color: var(--text-color);
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+/* Main page layout */
+.page {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.aside-right {
+    flex: 0 1 350px;
+    min-width: 0;
+    padding: 1rem;
+}
+
+/* Sections */
+section {
+    margin: 20px 10px;
+    text-align: center;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
     background-color: rgba(185, 220, 251, 0.66);
 }
 
-th,td {
+th,
+td {
     padding: 10px;
+    border: 3px solid var(--border-color);
     text-align: center;
-    border: 3px solid rgb(95, 142, 180);
+    overflow-wrap: anywhere;
 }
 
-section {
-    margin: 10px;
-    text-align: center;
+th {
+    background-color: rgba(0, 0, 139, 0.595);
+    color: white;
 }
 
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
+th,
+td {
+    font-size: 16px;
 }
 
+/* Images */
 img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 6px solid rgb(95, 142, 180);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 6px solid var(--border-color);
+    border-radius: 8px;
 }
 
-.holiday-photos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.holiday2-photos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
+/* All photo galleries */
+.adventure-photos,
+.holiday-photos,
+.holiday2-photos,
 .holiday3-photos {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
     gap: 20px;
-    margin-top: 20px;
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    padding: 10px;
 }
 
-.adventure-photos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+/* Consistent image sizes */
+.adventure-photos img,
+.holiday-photos img,
+.holiday2-photos img,
+.holiday3-photos img {
+    width: 280px;
+    height: 280px;
+    max-width: 100%;
+    object-fit: cover;
+    margin: 0;
+    border: 5px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 139, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-p {
+/* Hover effect */
+.adventure-photos img:hover,
+.holiday-photos img:hover,
+.holiday2-photos img:hover,
+.holiday3-photos img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 16px rgba(0, 0, 139, 0.3);
+}
+
+/* Gallery headings */
+.photo-section h2,
+.photo-section h3 {
     text-align: center;
+    width: 100%;
 }
 
-nav {
-    min-height: 50px;
+/* Keyboard accessibility */
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    background-color: #a7d7eb;
+a:focus-visible {
+    outline: 3px solid var(--extra-color);
+    outline-offset: 3px;
 }
 
-.nav-link {
-    color: darkblue;
-    text-decoration: none;
-    font-family: chewy, cursive;
-    font-size: 20px;
-}
-
-@media (min-width: 600px) {
+/* Smaller screens */
+@media (max-width: 768px) {
     .page {
-        grid-template-rows: 2fr 2fr;
-        grid-template-areas: "nav nav nav" "header header header" "main aside-right" ;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .main-right,
+    .aside-right {
+        width: 100%;
+    }
+
+    .aside-right {
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    table {
+        font-size: 14px;
     }
 }
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .adventure-photos,
+    .holiday-photos,
+    .holiday2-photos,
+    .holiday3-photos {
+        gap: 12px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+        font-size: 13px;
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .adventure-photos,
+    .holiday-photos,
+    .holiday2-photos,
+    .holiday3-photos {
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .adventure-photos img,
+    .holiday-photos img,
+    .holiday2-photos img,
+    .holiday3-photos img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
 
 
 

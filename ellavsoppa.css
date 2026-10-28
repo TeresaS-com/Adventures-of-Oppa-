@@ -102,54 +102,64 @@ body nav a.nav-links:focus-visible {
     line-height: 1.7;
 }
 
-/*Cats Fighting Banner*/
 
-.explosion-sprite.play {
-    opacity: 1;
-    animation: explode 0.8s steps(8) forwards;
+/* Cat and dog pictures */
+.page {
+    position: relative;
+    width: 300px;
+    margin: 30px auto;
 }
 
+/* Picture size */
+.explosion-cat,
+.explosion-dog {
+    width: 100%;
+    display: block;
+}
+
+/* Explosion animation */
+/* Explosion sprite */
+.explosion-sprite {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 160px;
+    height: 160px;
+
+    background-image: url("images/explosion-sprite.png");
+    background-repeat: no-repeat;
+    background-size: 1280px 160px;
+
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    animation:
+        explode 1s steps(8) forwards,
+        disappear 0.2s 1s forwards;
+}
+
+/* Play explosion frames */
 @keyframes explode {
     from {
         background-position: 0 0;
     }
+
     to {
-        background-position: -800% 0;
+        background-position: -1280px 0;
     }
 }
 
-.page {
-    position: relative;
-    display: inline-block;
-}
+/* Hide explosion after animation */
+/* @keyframes disappear {
+    from {
+        opacity: 1;
+    }
 
-.explosion-cat {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.explosion-sprite {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("../images/explosionsheet.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Show the explosion when hovering over the cat */
-
-.page:hover .explosion-sprite {
-    opacity: 1;
-}
-
+    to {
+        opacity: 0;
+    }
+} */
 /* Mobile layout */
 
 @media (max-width: 600px) {

@@ -44,7 +44,7 @@ body nav a.nav-links:focus-visible {
 
     padding: 6%;
 
-    background-image: url("../images/VS.JPEG");
+    background-image: url("./images/VS.JPEG");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

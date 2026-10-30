@@ -57,6 +57,12 @@ nav a:focus-visible {
     background-color: var(--contrast-color);
 }
 
+.aside-left {
+    flex: 0 1 350px;
+    min-width: 0;
+    padding: 1rem;
+}
+
 /* Headings */
 h1,
 h2,
@@ -157,7 +163,7 @@ img {
     padding: 10px;
 }
 
-/* Consistent image sizes */
+/*image sizes */
 .adventure-photos img,
 .holiday-photos img,
 .holiday2-photos img,

@@ -57,7 +57,7 @@ body nav a.nav-links:focus-visible {
 #vs-photo p {
     padding: 15px 24px;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #ffffffcc;
     color: var(--ella-text);
     font-size: clamp(28px, 5vw, 48px);
     font-weight: bold;
@@ -105,14 +105,23 @@ body nav a.nav-links:focus-visible {
 
 /* Cat and dog pictures */
 .page {
+    display: grid;
+
     position: relative;
     width: 300px;
-    margin: 30px auto;
+    margin: 10px auto;
+}
+
+#dog-cat-row {
+    display: flex;
 }
 
 /* Picture size */
 .explosion-cat,
 .explosion-dog {
+    display: flex;
+    flex-direction: row;
+
     width: 100%;
     display: block;
 }
@@ -131,7 +140,7 @@ body nav a.nav-links:focus-visible {
     background-repeat: no-repeat;
     background-size: 1280px 160px;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.5);
     z-index: 10;
 
     animation:
